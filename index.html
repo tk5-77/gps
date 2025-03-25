@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestão de Peças e Produção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gestão de Peças</h1>
+  </header>
+
+  <section id="authSection">
+    <h2>Autenticação</h2>
+    <input type="text" id="username" placeholder="Utilizador" />
+    <select id="perfil">
+      <option value="administrador">Administrador</option>
+      <option value="gestor">Gestor</option>
+      <option value="operador">Operador</option>
+    </select>
+    <button onclick="registarUtilizador()">Registar</button>
+    <button onclick="loginUtilizador()">Login</button>
+    <p id="authStatus"></p>
+  </section>
+  
+
+  <main style="display: none;">
+    <section id="registo-peca">
+      <h2>Nova Peça</h2>
+      <form id="formPeca">
+        <input type="text" id="nomePeca" placeholder="Nome da peça" required />
+        <button type="submit">Adicionar Peça</button>
+      </form>
+    </section>
+
+    <section id="lista-pecas">
+      <h2>Peças Registadas</h2>
+      <ul id="pecasContainer"></ul>
+    </section>
+  </main>
+
+  <section id="controlo-setores">
+    <h2>Controlo de Setores</h2>
+    <label for="pecaSelect">Selecionar Peça:</label>
+    <select id="pecaSelect"></select>
+  
+    <label for="setorSelect">Setor:</label>
+    <select id="setorSelect">
+      <option value="corte">Corte</option>
+      <option value="montagem">Montagem</option>
+      <option value="pintura">Pintura</option>
+    </select>
+
+    <button onclick="mostrarCusto()">Mostrar Custo</button>
+<div id="custoFinal"></div>
+  
+    <button onclick="registarEntrada()">Entrada</button>
+    <button onclick="registarSaida()">Saída</button>
+  
+    <div id="logSetores"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
